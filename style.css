@@ -1,0 +1,11 @@
+body{
+    text-align: center;
+}
+.popup-description{
+    display: none;
+}
+
+[type="radio"]:checked ~ label ~ .popup-description{
+  display: block;
+
+}

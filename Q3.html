@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnMouseOver and OnMouseOut Event</title>
+    <script type="text/javascript">
+        function setNewImage()
+        {
+          document.getElementById("img1").src="mouseover.jpg";
+        }
+        function setOldImage()
+        {
+            document.getElementById("img1").src="mouseout.jpg"
+
+        }
+    </script>
+</head>
+<body>
+    <img id="img1" onmouseover="setNewImage()"
+    onmouseout="setOldImage()" src="mouseover.jpg" width="300px"/>
+    
+</body>
+</html>
