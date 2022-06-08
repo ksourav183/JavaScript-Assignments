@@ -1,0 +1,42 @@
+#chapter4 {
+    margin-top: 300vh;
+    background-color: tomato;
+    height: 100vh;
+    position: relative;
+  }
+  
+  #chapter4::after {
+    content: 'chapter 4';
+    position: absolute;
+    color: white;
+    font-size: 3em;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #chapter10 {
+    margin-top: 300vh;
+    background-color: tomato;
+    height: 100vh;
+    position: relative;
+  }
+  
+  #chapter10::after {
+    content: 'chapter 4';
+    position: absolute;
+    color: white;
+    font-size: 3em;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
