@@ -3,54 +3,54 @@
 
 <head>
 	<title>
-		Check a number is Prime or
-		not using JavaScript
+		File Type Validation while
+		Uploading it using JavaScript
 	</title>
-	
-	<script type="text/javascript">
-	
-		// Function to check prime number
-		function p() {
-			
-			var n, i, flag = true;
-			
-			// Getting the value form text
-			// field using DOM
-			n = document.myform.n.value;
-			n = parseInt(n)
-			for(i = 2; i <= n - 1; i++)
-				if (n % i == 0) {
-					flag = false;
-					break;
-				}
-				
-				// Check and display alert message
-			if (flag == true)
-				alert(n + " is prime");
-			else
-				alert(n + " is not prime");
+
+	<style>
+		
+		
+		body {
+			text-align: center;
 		}
-	</script>
+	</style>
 </head>
 
 <body>
+	<h1>
+		File Validation
+	</h1>
+
 	
-		<h1>CheckPrime</h1>
-		
-		<h4>check number is prime or not</h4>
-		
-		
-		
-		<form name="myform">
-			Enter the number:
-			<input type="text" name=n value="">
-			
-			
-			
-			<input type="button" value="Check Prime Number" onClick="p()">
-			<br>
-		</form>
+
+	<!-- File input field -->
 	
+	<input type="file" id="file"
+		onchange="return fileValidation()" />
+
+	<!-- Image preview -->
+	<div id="imagePreview"></div>
+	<script>
+		function fileValidation() {
+			var fileInput =
+				document.getElementById('file');
+			
+			var filePath = fileInput.value;
+		
+			// Allowing file type
+			var allowedExtensions =/(\.zip)$/i;
+			
+			if (!allowedExtensions.exec(filePath)) {
+				alert('Invalid file type');
+				fileInput.value = '';
+				return false;
+			}
+            else
+            {
+                alert('success');
+            }
+		}
+	</script>
 </body>
 
 </html>

@@ -1,66 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-#myDIV {
-  width: 100%;
-  padding: 50px 0;
-  text-align: center;
-  background-color: white;
-  margin-top: 20px;
-}
-</style>
-<style>
-    table, th, td {
-      border:1px solid black;
-      background-color: yellow;
-    }
-    </style>
+    <meta charset="utf-8"/>
+    <title></title>
 </head>
 <body>
-
-<p>Click the "Hide/Show" button to toggle between hiding and showing the DIV element:</p>
-
-<button onclick="myFunction()">Hide/Show</button>
-
-<div id="myDIV">
-<table>
-    <tr>
-    <td>id</td>
-    <td>Color</td>
-    <td>Object</td>
-  </tr>
-  <tr>
-    <td>1.</td>
-    <td>Red</td>
-    <td>Apple</td>
-  </tr>
-  <tr>
-    <td>2.</td>
-    <td>Green</td>
-    <td>Leaf</td>
-  </tr>
-  <tr>
-    <td>3.</td>
-    <td>Yellow</td>
-    <td>Sun</td>
-  </tr>
-</table>
-</div>
-
-
-
-<script>
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
-
+    <form id="form1">
+        <div>
+            <input id="txtParent" type="text"/>
+            <input id="btnOpenPopup" type="button" value="Open Popup" onclick="OpenPopup('Popup.htm')"/><br/>
+            <input id="btnCallChildFunction" type="button" value="Call Child Function" onclick="CallChildFunction()"/><br/>
+            <input id="btnGetChildControl" type="button" value="Get Child Control" onclick="GetChildControl()"/><br/>
+            <input id="btnRefreshChild" type="button" value="Refresh Child" onclick="RefreshChild()"/><br/>
+        </div>
+    </form>
+    <script type="text/javascript">
+        var popupObject;
+        function OpenPopup(url) {
+            popupObject = window.open(url, "Popup", "toolbar=no,scrollbars=no,location=no" +
+                ",statusbar=no,menubar=no,resizable=0,width=500,height=300,left=800,top=500");
+            popupObject.focus();
+        }
+ 
+        function CallChildFunction() {
+            if (popupObject != null && !popupObject.closed) {
+                var val = popupObject.ChildFunction();
+                alert(val);
+            }
+        }
+ 
+        function ParentFunction() {
+            return document.getElementById("txtParent").value;
+        }
+ 
+        function GetChildControl() {
+            if (popupObject != null && !popupObject.closed) {
+                var form1 = popupObject.document.getElementsByTagName("form")[0];
+                alert(form1.txtChild.value);
+            }
+        }
+ 
+        function RefreshChild() {
+            if (popupObject != null && !popupObject.closed) {
+                popupObject.location.reload();
+            }
+        }
+    </script>
 </body>
 </html>

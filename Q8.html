@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript">
-        function countChars(countfrom,displayto) {
-          var len = document.getElementById(countfrom).value.length;
-          document.getElementById(displayto).innerHTML = len;
-        }
-        </script>
-        
-    <title>Count Characters in a Textarea</title>
-</head>
-<body style="text-align:center">
-    <textarea id="data" cols="40" rows="5" 
-onkeyup="countChars('data','charcount');" onkeydown="countChars('data','charcount');" onmouseout="countChars('data','charcount');"></textarea><br>
-<span id="charcount">0</span> characters entered.
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
     
+    <br>
+
+    <button onClick="code()"> code </button><br><br>
+
+
+      </body>
+<textarea id="code" rows="90" cols="60" >
+</textarea>
+    <script>
+      function code(){
+
+        document.querySelector('#code').innerHTML = document.getElementsByTagName('html')[0].innerHTML
+      }
+    </script>
 </body>
+  </body>
 </html>

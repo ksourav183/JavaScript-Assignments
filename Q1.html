@@ -1,130 +1,62 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Validation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style1.css">
-    <script defer src="./script1.js"></script>
-</head>
-<body>
-    <div class="container">
-        <form id="form" action="/">
-            <h1>Registration </style></h1>
-            <div class="input-control">
-                <label for="username">First Name</label>
-                <input id="First Name" name="First Name" type="text" required>
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="username">Last Name</label>
-                <input id="Last name" name="Last Name" type="text" required>
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="username">Username</label>
-                <input id="username" name="username" type="text" required>
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="text">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="password">Password</label>
-                <input id="password"name="password" type="password">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="password2">Confirm Password </label>
-                <input id="password2"name="password2" type="password">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="username"> Address</label>
-                <input id="Address" name="Address" type="text">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="username">Mobile No.</label>
-                <input id="Mobile" name="Mobile" type="text">
-                <div class="error"></div>
-            </div>
-            <div>
-            <p>Gender: </p>
-              <input type="radio" id="male" name="gender" value="male" required>
-              <label for="male">Male</label><br>
-            <p class="popup-description">
-                Enter Wife name <b></b>.
-               </p>
-              <input type="radio" id="female" name="gender" value="Female" required>
-              <label for="Female">Female</label><br>
-            <p class="popup-description">
-                Enter Husband name <b></b>.
-              </p>
-        </div>
-        <br>
-            <div class="input-control">
-                <label for="password">Email</label>
-                <input id="email"name="email" type="email">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="password">Confirm Email</label>
-                <input id="Email1"name="Email1" type="password">
-                <div class="error"></div>
-            </div>
-            <div>
-                <label>Country </label> 
-                <select>  
-                <option value="Select">Select</option>  
-                <option value="India">India</option>  
-                <option value="USA">USA</option>  
-                <option value="UK">UK</option>  
-                <option value="Australia">Australia</option>  
-                <option value="France">France</option>  
-                </select> 
-            </div>
-            <br>
+<!DOCTYPE html>
 
-            <div>
-                <label>State</label> 
-    <select>  
-        <option value="Select">Select</option>  
-        <option value="Jharkhand">Jharkhand</option>  
-        <option value="Bihar">Bihar</option>  
-        <option value="UP">UP</option>  
-        <option value="Maharashtra">Maharashtra</option>  
-        <option value="Karnataka">Karnataka</option>  
-        </select>
-            </div>
-            <br>
-            <div>
-                <label>City</label> 
-        <select>  
-            <option value="Select">Select</option>  
-            <option value="Jamshedpur">jamshedpur</option>  
-            <option value="Patna">Patna</option>  
-            <option value="Lucknow">Lucknow</option>  
-            <option value="Mumbai">Mumbai</option>  
-            <option value="Bengaluru">Bengaluru</option>  
-            </select>
-            </div>
-            <br>
-            <div>
-                <label>   
-                    Language :  
-                    </label> 
-                    <input type="checkbox" name="English"/> English   
-                    <input type="checkbox" name="Hindi"/> Hindi  
-                    <input type="checkbox" name="Marathi"/> Marathi  
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+<html lang="en">
+
+<body>
+
+    <input type="checkbox" name="java" value="java">Java<br>  
+
+    <input type="checkbox" name="js" value="js">Js<br>  
+
+    <input type="checkbox" name="html" value="html">html<br>  
+
+    <input type="checkbox" name="sql" value="sql">sql<br>  
+
+    <input type="checkbox" name="plsql" value="plsql">plsql<br>  
+
+    <button  onclick="toggle()">Select/Deselect</button>
+
+    <button  onclick="count()">Count</button>
+
 </body>
-</html>
+
+<script>
+
+  
+
+  function toggle(){
+
+    const d = document.querySelectorAll('input')
+
+    for(var i=0; i<d.length; i++){
+
+      d[i].checked = !d[i].checked;
+
+    }
+
+  }
+
+  function count(){
+
+    const d = document.querySelectorAll('input');
+
+    var count = 0;
+
+    for(var i=0; i<d.length; i++){
+
+      if(d[i].checked){
+
+        count++;
+
+      }
+
+    }
+
+    alert(count);
+
+  }
+
+ </script>
+
+ </html>
+

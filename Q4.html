@@ -1,76 +1,26 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<title>
-		ASSIGNMENT Q.4 ?
-	</title>
-	
-	<script src=
-"https://code.jquery.com/jquery-1.12.4.min.js">
-	</script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+<body>
+    <div id="example"></div>
 
-<body style="text-align:center;">
+<script type="text/javascript">
 
-	<h1 style = "color:green;" >
-		ASSIGNMENT
-	</h1>
+txt = "<p>Browser CodeName: " + navigator.appCodeName + "</p>";
+txt+= "<p>Browser Name: " + navigator.appName + "</p>";
+txt+= "<p>Browser Version: " + navigator.appVersion + "</p>";
+txt+= "<p>Cookies Enabled: " + navigator.cookieEnabled + "</p>";
+txt+= "<p>Platform: " + navigator.platform + "</p>";
+txt+= "<p>User-agent header: " + navigator.userAgent + "</p>";
 
-	<h3>
-		How to enable and disable all input
-		controls inside a form ?
-	</h3>
-	<hr>
-	
-	<form id="ASGN">
-		<h3 style = "color:green;" >
-			Registration Form
-		</h3>
-		
-		<label><h4>Name:</h4></label> <input type="text">
-		
-		<label><h4>Gender:</h4></label>
-		<label><input type="radio" name="sex"> Male</label>	
-		<label><input type="radio" name="sex"> Female</label>
-		
-		<label><h4>Address:</h4></label>
-		<textarea></textarea>
-		
-		<label><h4>Country:</h4></label>
-		<select>
-			<option>select</option>
-		</select>
-		<br><br>
-		
-		<button type="button">Submit</button>
-		<button type="button">Reset</button>
-	</form>
-	
-	<br><br>
-	
-	<input onclick="enable_disable()" type="button"
-				class="slide-toggle" value="Enable"
-				id="myButton1">
-	</input>
+document.getElementById("example").innerHTML=txt;
 
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$("#ASGN :input").prop("disabled", true);
-			$(".slide-toggle").click(function() {
-				if (this.value=="Enable") {
-					this.value = "Disable";
-					$("#ASGN :input").prop("disabled", false);
-                    
-                    // (Selector).prop()(property,value)
-				}
-				else {
-					this.value = "Enable";
-					$("#ASGN :input").prop("disabled", true);
-				}
-			});
-		});
-	</script>
+</script>
+    
 </body>
-
 </html>

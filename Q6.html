@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <a class="testlink" href="http://google.com">Google</a> 
 
-  <body>
-    <button id="btn" style="background-color: yellow">Button</button>
 
-    <script src="script6.js"></script>
-  </body>
+<br><br>
+<button onclick="disable_link()">disable</button>
+<button onclick="enable_link()">enable</button>
+    
+</body>
+<script>
+    function disable_link() {
+    var links = document.getElementsByClassName('testlink');
+    for (var i = 0; i < links.length; i++) {
+        links[i].setAttribute('data-href', links[i].getAttribute('href'));
+        links[i].removeAttribute('href');
+    }
+}
+
+function enable_link() {
+    var links = document.getElementsByClassName('testlink');
+    for (var i = 0; i < links.length; i++) {
+        links[i].setAttribute("href", links[i].getAttribute('data-href'));
+    }
+}
+</script>
 </html>

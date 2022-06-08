@@ -1,36 +1,36 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>
-			Display a confirmation dialog when
-			clicking an a tag link
-		</title>
-	</head>
-	
-	<body >
-		
-		<h1 style = "color:blue;" >
-			ASSIGNMENT
-		</h1>
-		
-		<p id = "ASGN" style =
-			"font-size: 15px; font-weight: bold;">
-		</p>
-		
-		<a href="#" onclick="return confirm('Do you want to visit this page?')">
-			Visit to google
-		</a>
-		
-		<br><br>
-		
-		<p id = "ASGN" style =
-			"color:green; font-size: 20px; font-weight: bold;">
-		</p>
-		
-		<script>
-			var el_up = document.getElementById("ASGN");
-			
-			
-		</script>
-	</body>
-</html>					
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <form action="action_page.php" method="post">
+    <div class="imgcontainer">
+      
+    </div>
+  
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+  
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+  
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+  <button onclick="showCount()">
+    show code
+  </button>
+</body>
+<script>
+  function showCount(){
+    alert(document.querySelectorAll("input:not([type='password'])").length)
+  }
+ </script>
+ </html>

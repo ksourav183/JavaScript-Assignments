@@ -1,25 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnMouseOver and OnMouseOut Event</title>
-    <script type="text/javascript">
-        function setNewImage()
-        {
-          document.getElementById("img1").src="mouseover.jpg";
-        }
-        function setOldImage()
-        {
-            document.getElementById("img1").src="mouseout.jpg"
-
-        }
-    </script>
-</head>
 <body>
-    <img id="img1" onmouseover="setNewImage()"
-    onmouseout="setOldImage()" src="mouseover.jpg" width="300px"/>
+  <select name="list_box_name[]" id="left" size="3" multiple="multiple">
+    <option value="option1">Option1</option>
+    <option value="option2">Option2</option>
+    <option value="Option3">Option3</option>
+  </select>    
+  <button onclick="transfer()">
+    >>
+  </button>
+  <select id="right" name="list_box_name[]" size="3" multiple="multiple">
     
+    
+  </select>  
 </body>
-</html>
+<script>
+  function transfer(){
+    const item = document.querySelector('#left').options;
+    const right = document.querySelector('#right');
+    const set = new Set();
+    for(var i=0; i<right.length; i++){
+      set.add(right[i].value);
+    }
+    const result = [];
+    for(var i=0; i<item.length; i++){
+      if(item[i].selected && !set.has(item[i].value)){
+        result.push(item[i]);
+      }
+    }
+
+
+    for(var i=0; i<result.length; i++){
+      var opt = document.createElement('option');
+      opt.value = result[i].value;
+      opt.innerHTML = result[i].innerHTML;
+      document.querySelector('#right').appendChild(opt);
+    }
+    
+  }
+ </script>
+ </html>
