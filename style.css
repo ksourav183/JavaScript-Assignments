@@ -1,11 +1,32 @@
-body{
-    text-align: center;
+table{
+    text-align: left;
+    border-spacing: 1.0 rem;
+    padding: 0.5 rem;
+    
+    margin-left: auto;
+    margin-right: auto;
 }
-.popup-description{
-    display: none;
+table{
+    border-top: 5px solid #808080;
+    border-left: 5px solid #808080;
+    border-right: 5px solid #0000ff;
+    border-bottom: 5px solid #0000ff;
+    
+
+}
+td{
+    padding: 1.0rem;
+    border: 1px solid blue;
+    
+    
+}
+tr{
+    border-color: blue;
 }
 
-[type="radio"]:checked ~ label ~ .popup-description{
-  display: block;
+th{
+    background-color: #ffff00;
+    padding: 0.5rem;
+   
 
 }
